@@ -1,3 +1,28 @@
+<script>
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();  // Parandalon dërgimin e formës
+    
+    var formData = new FormData(event.target);
+    var object = {};
+    formData.forEach((value, key) => { object[key] = value });
+
+    fetch("https://script.google.com/home/projects/1uo4nVsyAF75vCrunEw6-XA4yjXkEG_dW_hsz-AvN_L0B-RNt2t9p4tUS/edit", {
+      method: "POST",
+      body: JSON.stringify(object),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Përgjigja është dërguar me sukses!");
+    })
+    .catch(error => {
+      alert("Ndodhi një gabim: " + error);
+    });
+  });
+</script>
+
 <form id="myForm">
     <label for="name">Emri:</label>
     <input type="text" id="name" name="name" required>
