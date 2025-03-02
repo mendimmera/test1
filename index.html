@@ -6,7 +6,7 @@
     var object = {};
     formData.forEach((value, key) => { object[key] = value });
 
-    fetch("https://script.google.com/macros/s/AKfycbwWNrRowvf7UsXtRkYdgLAONHBbIssL6_ljyx5sECY/dev", {
+    fetch("https://script.google.com/macros/s/AKfycbwjooFiQSNQ3vyihZ8Wh1ujqO-sry0ASYxr91B4MOouvsOdzU9wayICFmsgj93dfaRY/exec", {
       method: "POST",
       body: JSON.stringify(object),
       headers: {
